@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.less';
 import AdminLTE from './vendor/AdminLTE'
+import user2img from "./vendor/AdminLTE/dist/img/user2-160x160.jpg";
 
 //só pra ver o eslint gritar no src/, mas nao encher o saco pelo adminlte!
 const a = 1;
@@ -55,7 +56,7 @@ class MessageMenu extends Component {
                     <a href="#">
                         <div className="pull-left">
                             {/* User Image */}
-                            <img src="adminlte/dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                            <img src={user2img} className="img-circle" alt="User Image" />
                         </div>
                         {/* Message title and timestamp */}
                         <h4>
@@ -122,7 +123,7 @@ class UserMenu extends Component {
                 {/* Menu Toggle Button */}
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                     {/* The user image in the navbar*/}
-                    <img src="adminlte/dist/img/user2-160x160.jpg" className="user-image" alt="User Image" />
+                    <img src={user2img} className="user-image" alt="User Image" />
                     {/* hidden-xs hides the username on small devices so only the image appears. */}
                     <span className="hidden-xs">Alexander Pierce</span>
                 </a>
@@ -199,7 +200,7 @@ class MainSidebar extends Component {
                     {/* Sidebar user panel (optional) */}
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="adminlte/dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                            <img src={user2img} className="img-circle" alt="User Image" />
                         </div>
                         <div className="pull-left info">
                             <p>Alexander Pierce</p>
@@ -342,7 +343,7 @@ class Footer extends Component {
                     Anything you want
                 </div>
                 {/* Default to the left */}
-                <strong>Copyright © 2017 <a href="#">DoctorCondo</a>.</strong> All rights reserved.
+                <strong>Copyright © 2017 <a href="#">AdminLTE</a>.</strong> All rights reserved.
             </footer>
         );
     }
