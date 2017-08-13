@@ -1,4 +1,6 @@
-require('./AdminLTE/dist/js/adminlte');
+import './AdminLTE/dist/js/adminlte';
+import './AdminLTE/dist/css/AdminLTE.css';
+import './AdminLTE/dist/css/skins/skin-blue.css';
 
 const AdminLTESelectors = {
     pushMenuButton: '[data-toggle="push-menu"]',
@@ -16,10 +18,11 @@ export default class AdminLTE {
 
     init() {
         this.pushMenu.call($(AdminLTESelectors.pushMenuButton));
-        this.layout.call($('body'), 'init');
+        this.layout.call($('body'), 'activate');
         //tree
+        var tree = this.tree;
         $(AdminLTESelectors.tree).each(function () {
-            this.tree.call($(this));
+            tree.call($(this));
         })
         // this.controlSidebar parece que não precisa de init, pois só escuta o evento do botao
     }
