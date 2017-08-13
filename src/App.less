@@ -1,40 +1,254 @@
-//NOTE: para isso funcionar, é necessário criar um link dentro da pasta build para as imagens da pasta dist
-//cd vendor/AdminLTE/build/ && ln -s ../dist/img
-@import 'vendor/AdminLTE/build/less/AdminLTE.less';
-@import 'vendor/AdminLTE/build/less/skins/skin-blue.less';
+// importar minha customização do admin lte
+@import 'vendor/AdminLTE.less';
 
-// COLORS
-@primary-color          : #7A9E9F;
-@info-color             : #68B3C8;
-@success-color          : #7AC29A;
-@error-color            : #EB5E28;
-@highlight-color        : #EB5E28;
-@warning-color          : #F3BB45;
-@normal-color           : #66615B;
+// sobreescrever css dele abaixo
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+}
 
-// --------------------------------------------------------
-// Primary
-@light-blue: @primary-color;
-// Danger
-@red: @error-color;
-// Success
-@green: @success-color;
-// Info
-@aqua: @info-color;
-// Warning
-@yellow: @warning-color;
+.navbar {
+  border: 0;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 0px;
+  z-index: 3;
+}
+.navbar .navbar-brand {
+  font-weight: 600;
+  margin: 5px 0px;
+  padding: 20px 15px;
+  font-size: 22px;
+}
+.navbar .navbar-nav > li > a {
+  line-height: 1.42857;
+  margin: 15px 3px;
+  padding: 10px 15px;
+}
+.navbar .navbar-nav > li > a.btn {
+  margin: 15px 3px;
+  padding: 7px 18px;
+}
+.navbar .navbar-nav > li > a.btn-xs {
+  margin: 25px 5px;
+}
+.navbar .navbar-nav > li > a.btn-sm {
+  margin: 20px 5px;
+}
+.navbar .btn {
+  margin: 15px 3px;
+  font-size: 16px;
+}
+.navbar .btn-simple {
+  font-size: 18px;
+}
 
-@blue: #0073b7;
-@navy: #001F3F;
-@teal: #39CCCC;
-@olive: #3D9970;
-@lime: #01FF70;
-@orange: #FF851B;
-@fuchsia: #F012BE;
-@purple: #605ca8;
-@maroon: #D81B60;
-@black: #111;
-@gray-lte: #d2d6de;
+.navbar-nav > li > .dropdown-menu {
+  border-radius: 8px;
+  margin-top: -4px;
+}
 
-@body-bg: #f4f3ef;
-@sidebar-dark-bg: #66615b;
+.navbar-transparent .navbar-brand, [class*="navbar-ct"] .navbar-brand {
+  opacity: 0.9;
+}
+.navbar-transparent .navbar-brand:focus, .navbar-transparent .navbar-brand:hover, [class*="navbar-ct"] .navbar-brand:focus, [class*="navbar-ct"] .navbar-brand:hover {
+  background-color: transparent;
+  opacity: 1;
+}
+.navbar-transparent .navbar-brand:not([class*="text"]), [class*="navbar-ct"] .navbar-brand:not([class*="text"]) {
+  color: #FFFFFF;
+}
+.navbar-transparent .navbar-nav > li > a:not(.btn), [class*="navbar-ct"] .navbar-nav > li > a:not(.btn) {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  opacity: 0.8;
+}
+.navbar-transparent .navbar-nav > .active > a:not(.btn),
+.navbar-transparent .navbar-nav > .active > a:hover:not(.btn),
+.navbar-transparent .navbar-nav > .active > a:focus:not(.btn),
+.navbar-transparent .navbar-nav > li > a:hover:not(.btn),
+.navbar-transparent .navbar-nav > li > a:focus:not(.btn), [class*="navbar-ct"] .navbar-nav > .active > a:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:focus:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:focus:not(.btn) {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.navbar-transparent .navbar-nav .nav > li > a.btn:hover, [class*="navbar-ct"] .navbar-nav .nav > li > a.btn:hover {
+  background-color: transparent;
+}
+.navbar-transparent .navbar-nav > .dropdown > a .caret,
+.navbar-transparent .navbar-nav > .dropdown > a:hover .caret,
+.navbar-transparent .navbar-nav > .dropdown > a:focus .caret, [class*="navbar-ct"] .navbar-nav > .dropdown > a .caret,
+[class*="navbar-ct"] .navbar-nav > .dropdown > a:hover .caret,
+[class*="navbar-ct"] .navbar-nav > .dropdown > a:focus .caret {
+  border-bottom-color: #FFFFFF;
+  border-top-color: #FFFFFF;
+}
+.navbar-transparent .navbar-nav > .open > a,
+.navbar-transparent .navbar-nav > .open > a:hover,
+.navbar-transparent .navbar-nav > .open > a:focus, [class*="navbar-ct"] .navbar-nav > .open > a,
+[class*="navbar-ct"] .navbar-nav > .open > a:hover,
+[class*="navbar-ct"] .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.navbar-transparent .btn-default, [class*="navbar-ct"] .btn-default {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+.navbar-transparent .btn-default.btn-fill, [class*="navbar-ct"] .btn-default.btn-fill {
+  color: #9A9A9A;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+}
+.navbar-transparent .btn-default.btn-fill:hover,
+.navbar-transparent .btn-default.btn-fill:focus,
+.navbar-transparent .btn-default.btn-fill:active,
+.navbar-transparent .btn-default.btn-fill.active,
+.navbar-transparent .open .dropdown-toggle.btn-fill.btn-default, [class*="navbar-ct"] .btn-default.btn-fill:hover,
+[class*="navbar-ct"] .btn-default.btn-fill:focus,
+[class*="navbar-ct"] .btn-default.btn-fill:active,
+[class*="navbar-ct"] .btn-default.btn-fill.active,
+[class*="navbar-ct"] .open .dropdown-toggle.btn-fill.btn-default {
+  border-color: #FFFFFF;
+  opacity: 1;
+}
+
+.navbar-transparent .dropdown-menu .divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-default {
+  background-color: #FFFCF5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar-default .brand {
+  color: #66615b !important;
+}
+.navbar-default .navbar-nav > li > a:not(.btn) {
+  color: #9A9A9A;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:not(.btn):hover,
+.navbar-default .navbar-nav > .active > a:not(.btn):focus,
+.navbar-default .navbar-nav > li > a:not(.btn):hover,
+.navbar-default .navbar-nav > li > a:not(.btn):focus {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #68B3C8;
+  opacity: 1;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-bottom-color: #68B3C8;
+  border-top-color: #68B3C8;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #68B3C8;
+}
+.navbar-default .navbar-nav .navbar-toggle:hover, .navbar-default .navbar-nav .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-default:not(.navbar-transparent) .btn-default:hover {
+  color: #68B3C8;
+  border-color: #68B3C8;
+}
+.navbar-default:not(.navbar-transparent) .btn-neutral, .navbar-default:not(.navbar-transparent) .btn-neutral:hover, .navbar-default:not(.navbar-transparent) .btn-neutral:active {
+  color: #9A9A9A;
+}
+
+/*      Navbar with icons            */
+.navbar-icons.navbar .navbar-brand {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.navbar-icons .navbar-nav > li > a {
+  text-align: center;
+  padding: 6px 15px;
+  margin: 6px 3px;
+}
+.navbar-icons .navbar-nav [class^="pe"] {
+  font-size: 30px;
+  position: relative;
+}
+.navbar-icons .navbar-nav p {
+  margin: 3px 0 0;
+}
+
+.navbar-form {
+  margin: 15px 3px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.navbar-form .btn {
+  margin: 0px 0px 0px 5px;
+}
+.navbar-form .form-control {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 22px;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #E3E3E3;
+}
+.navbar-transparent .navbar-form .form-control, [class*="navbar-ct"] .navbar-form .form-control {
+  color: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.navbar-ct-primary {
+  background-color: #8ECFD5;
+}
+
+.navbar-ct-info {
+  background-color: #7CE4FE;
+}
+
+.navbar-ct-success {
+  background-color: #8EF3C5;
+}
+
+.navbar-ct-warning {
+  background-color: #FFE28C;
+}
+
+.navbar-ct-danger {
+  background-color: #FF8F5E;
+}
+
+.navbar-transparent {
+  padding-top: 15px;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-toggle {
+  margin-top: 19px;
+  margin-bottom: 19px;
+  border: 0;
+}
+.navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+}
+.navbar-toggle .navbar-collapse,
+.navbar-toggle .navbar-form {
+  border-color: transparent;
+}
+.navbar-toggle.navbar-default .navbar-toggle:hover, .navbar-toggle.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar .navbar-nav > li > a.profile-photo {
+  padding: 0px 0px 0px 5px;
+}

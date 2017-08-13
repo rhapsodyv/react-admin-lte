@@ -22,6 +22,169 @@ class NavBarLogo extends Component {
     }
 }
 
+class NavbarDropMenu extends Component {
+    render() {
+        return (
+            <li className={`dropdown ${this.props.className}`}>
+                {/* Menu toggle button */}
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                    <i className={`${this.props.iconClassName}`} />
+                    <span className={`label ${this.props.iconLabelClassName}`}>{this.props.badge}</span>
+                </a>
+                <ul className="dropdown-menu">
+                    <li className="header">{this.props.headerText}</li>
+                    <li>
+                        {/* Inner Menu: contains the notifications */}
+                        <ul className="menu">
+                            {this.props.children}
+                        </ul>
+                    </li>
+                    <li className="footer"><a href={this.props.buttonHref}>{this.props.buttonText}</a></li>
+                </ul>
+            </li>
+        );
+    }
+}
+
+class MessageMenu extends Component {
+    render() {
+        return (
+            <NavbarDropMenu className="messages-menu" badge="4" headerText="You have 4 messages"
+                            buttonText="See All Messages" buttonHref="#" iconClassName="fa fa-envelope-o" iconLabelClassName="label-success">
+                <li>{/* start message */}
+                    <a href="#">
+                        <div className="pull-left">
+                            {/* User Image */}
+                            <img src="adminlte/dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                        </div>
+                        {/* Message title and timestamp */}
+                        <h4>
+                            Support Team
+                            <small><i className="fa fa-clock-o" /> 5 mins</small>
+                        </h4>
+                        {/* The message */}
+                        <p>Why not buy a new awesome theme?</p>
+                    </a>
+                </li>
+                {/* end message */}
+            </NavbarDropMenu>
+        );
+    }
+}
+
+class NotificationsMenu extends Component {
+    render() {
+        return (
+            <NavbarDropMenu className="notifications-menu" badge="10" headerText="You have 10 notifications"
+                            buttonText="View All" buttonHref="#" iconClassName="fa fa-bell-o" iconLabelClassName="label-warning">
+                <li>{/* start notification */}
+                    <a href="#">
+                        <i className="fa fa-users text-aqua" /> 5 new members joined today
+                    </a>
+                </li>
+                {/* end notification */}
+            </NavbarDropMenu>
+        );
+    }
+}
+
+class TasksMenu extends Component {
+    render() {
+        return (
+            <NavbarDropMenu className="tasks-menu" badge="9" headerText="You have 9 tasks"
+                            buttonText="View all tasks" buttonHref="#" iconClassName="fa fa-flag-o" iconLabelClassName="label-danger">
+                <li>{/* Task item */}
+                    <a href="#">
+                        {/* Task title and progress text */}
+                        <h3>
+                            Design some buttons
+                            <small className="pull-right">20%</small>
+                        </h3>
+                        {/* The progress bar */}
+                        <div className="progress xs">
+                            {/* Change the css width attribute to simulate progress */}
+                            <div className="progress-bar progress-bar-aqua" style={{width: '20%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                                <span className="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {/* end task item */}
+            </NavbarDropMenu>
+        );
+    }
+}
+
+class UserMenu extends Component {
+    render() {
+        return (
+            <li className="dropdown user user-menu"> {/* User Account Menu */}
+                {/* Menu Toggle Button */}
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                    {/* The user image in the navbar*/}
+                    <img src="adminlte/dist/img/user2-160x160.jpg" className="user-image" alt="User Image" />
+                    {/* hidden-xs hides the username on small devices so only the image appears. */}
+                    <span className="hidden-xs">Alexander Pierce</span>
+                </a>
+                <ul className="dropdown-menu">
+                    {/* The user image in the menu */}
+                    <li className="user-header">
+                        <img src="adminlte/dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                        <p>
+                            Alexander Pierce - Web Developer
+                            <small>Member since Nov. 2012</small>
+                        </p>
+                    </li>
+                    {/* Menu Body */}
+                    <li className="user-body">
+                        <div className="row">
+                            <div className="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div className="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div className="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </div>
+                        {/* /.row */}
+                    </li>
+                    {/* Menu Footer*/}
+                    <li className="user-footer">
+                        <div className="pull-left">
+                            <a href="#" className="btn btn-default btn-flat">Profile</a>
+                        </div>
+                        <div className="pull-right">
+                            <a href="#" className="btn btn-default btn-flat">Sign out</a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        );
+    }
+}
+
+class NavRightMenu extends Component {
+    render() {
+        return (
+            <div className="navbar-custom-menu">
+                <ul className="nav navbar-nav">
+                    <MessageMenu />
+                    <NotificationsMenu />
+                    <TasksMenu/>
+                    <UserMenu/>
+
+                    {/* Control Sidebar Toggle Button */}
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i className="fa fa-gears" /></a>
+                    </li>
+                </ul>
+            </div>
+        );
+    }
+}
+
 class MainSidebar extends Component {
     componentDidMount() {
         var adminlte = new AdminLTE();
@@ -197,7 +360,7 @@ class MainHeader extends Component {
                         <span className="sr-only">Toggle navigation</span>
                     </a>
                     {/* Navbar Right Menu */}
-                    {/*<NavRightMenu/>*/}
+                    <NavRightMenu/>
                 </nav>
             </header>
         );
