@@ -28,7 +28,7 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
     } else {
         lessRules = {
             test: lessExtension,
-            include: '/Users/victor/Development/playground/admin-tle-react/src',
+            //include: '/Users/victor/Development/playground/admin-tle-react/src',
             use: [
                 ...cssRules.use,
                 { loader: 'less-loader', options: lessLoaderOptions }
