@@ -3,12 +3,18 @@ const webpack = require('webpack');
 
 module.exports = function override(config, env) {
     //do stuff with the webpack config...
-    //console.log(config.module);
-    config.plugins.push(new webpack.ProvidePlugin({
-        $: "jquery",
-        jquery: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery"
-    }));
+
+    //diz pra porcaria usar o meu eslintrc!!
+    config.module.rules[0].use[0].options.useEslintrc = true;
+
+    // injetar um plugin nao funcionou...
+    // config.plugins.push(new webpack.ProvidePlugin({
+    //     $: "jquery",
+    //     jquery: "jquery",
+    //     'window.jQuery': 'jquery',
+    //     jQuery: "jquery",
+    //     "window.jQuery": "jquery"
+    // }));
+
     return config;
 }
