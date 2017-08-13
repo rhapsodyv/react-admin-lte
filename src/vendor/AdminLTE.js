@@ -1,4 +1,4 @@
-import './AdminLTE/dist/js/adminlte'
+require('./AdminLTE/dist/js/adminlte');
 
 const AdminLTESelectors = {
     pushMenuButton: '[data-toggle="push-menu"]',
