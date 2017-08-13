@@ -1,6 +1,6 @@
 import './AdminLTE/dist/js/adminlte';
-import './AdminLTE/dist/css/AdminLTE.css';
-import './AdminLTE/dist/css/skins/skin-blue.css';
+//import './AdminLTE/dist/css/AdminLTE.css';
+//import './AdminLTE/dist/css/skins/skin-blue.css';
 
 const AdminLTESelectors = {
     pushMenuButton: '[data-toggle="push-menu"]',

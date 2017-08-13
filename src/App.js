@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.less';
 import AdminLTE from './vendor/AdminLTE'
 
 //só pra ver o eslint gritar no src/, mas nao encher o saco pelo adminlte!
