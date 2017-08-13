@@ -1,6 +1,4 @@
 import './AdminLTE/dist/js/adminlte';
-//import './AdminLTE/dist/css/AdminLTE.css';
-//import './AdminLTE/dist/css/skins/skin-blue.css';
 
 const AdminLTESelectors = {
     pushMenuButton: '[data-toggle="push-menu"]',
@@ -25,5 +23,10 @@ export default class AdminLTE {
             tree.call($(this));
         })
         // this.controlSidebar parece que não precisa de init, pois só escuta o evento do botao
+    }
+
+    requireCss() {
+        require('./AdminLTE/dist/css/AdminLTE.min.css');
+        require('./AdminLTE/dist/css/skins/_all-skins.min.css');
     }
 }
