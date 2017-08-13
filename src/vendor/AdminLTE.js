@@ -1,3 +1,5 @@
+import './AdminLTE/dist/js/adminlte'
+
 const AdminLTESelectors = {
     pushMenuButton: '[data-toggle="push-menu"]',
     tree: '[data-widget="tree"]'
