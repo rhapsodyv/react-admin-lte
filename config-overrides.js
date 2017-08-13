@@ -37,19 +37,11 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
     }
 
     config.module.rules.push(lessRules);
-    // config.module.rules.push({
-    //     test: /\.js$/,
-    //     issuer: /\.less$/,
-    //     use: [{
-    //         loader: "js-to-less-loader"
-    //     }]});
 
     return config;
 }
 
 module.exports = function override(config, env) {
-    //do stuff with the webpack config...
-
     //diz pra porcaria usar o meu eslintrc!!
     config.module.rules[0].use[0].options.useEslintrc = true;
     config.module.rules[0].use[0].options.ignore = true;
@@ -63,14 +55,8 @@ module.exports = function override(config, env) {
     //     "window.jQuery": "jquery"
     // }));
 
-    // const ExtractTextPlugin = require("extract-text-webpack-plugin");
-    //
-    // const extractLess = new ExtractTextPlugin({
-    //     filename: "[name].[contenthash].css",
-    //     disable: process.env.NODE_ENV === "development"
-    // });
-    // config.plugins.push(extractLess);
-
+    // Necessário reescrever o less para usar o parametro relativeUrls: true
+    // node-less-chokidar não permite passar parametros para o less. Então esse rewrite é o mais fácil
     rewireLess(config, env, { relativeUrls: true, sourceMap: true });
 
     return config;
