@@ -26,7 +26,8 @@ export default class AdminLTE {
     }
 
     requireCss() {
-        require('./AdminLTE/dist/css/AdminLTE.min.css');
-        require('./AdminLTE/dist/css/skins/_all-skins.min.css');
+        // se colocar aqui, ele faz require sempre, nao sei fazer o require opcional...
+        // require('./AdminLTE/dist/css/AdminLTE.min.css');
+        // require('./AdminLTE/dist/css/skins/_all-skins.min.css');
     }
 }
